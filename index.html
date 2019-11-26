@@ -13,6 +13,31 @@
   </head>
 
   <body>
+    <header>
+      <h1 class="m-auto text-center">Stay on Track</h1>
+    </header>
+    <main class="container-fluid">
+      <div class="row">
+        <div class="col-8 m-auto text-center">
+          <form
+            class="form-inline"
+            onsubmit="app.listsController.newChore(event)"
+          >
+            <input
+              class="col-sm-10 form-control col-form-label-lg"
+              type="text"
+              name="title"
+              placeholder="What do you need to do today?..."
+              required
+            />
+            <button type="submit" class="btn btn-primary mb-2">
+              Add Chore
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="row" id="chores"></div>
+    </main>
     <script src="app/main.js" type="module"></script>
   </body>
 </html>

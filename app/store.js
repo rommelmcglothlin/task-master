@@ -31,5 +31,5 @@ class Store {
   }
 }
 
-const store = new Store();
-export default store;
+const STORE = new Store();
+export default STORE;

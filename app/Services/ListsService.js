@@ -1,21 +1,29 @@
 import List from "../Models/List.js";
-import store from "../store.js";
+import STORE from "../store.js";
 
 //Public
 class ListsService {
-  removeChore(id) {
-    let index = store.State.lists.findIndex(l => l.id == id);
-    store.State.lists.splice(index, 1);
-    store.saveState();
+  removeChore(choreId, choreIndex) {
+    let choreToRemove = STORE.State.lists.find(c => c.id == choreId);
+    choreToRemove.chores.splice(choreIndex, 1);
+    STORE.saveState();
   }
-  newChore(newChore) {
-    store.State.lists.push(new List(newChore));
-    store.saveState();
+
+  addChore(id, chore) {
+    let newChore = STORE.State.lists.find(c => c.id == id);
+    newChore.chores.push(chore);
+    STORE.saveState();
   }
-  //TODO  Here is where we handle all of our business logic,
-  //given the information you need in the controller,
-  //what methods will you need to do when this class is first 'constructed'?
-  //NOTE You will need this code to persist your data into local storage, be sure to call the store method to save after each change
+
+  removeTask(id) {
+    let index = STORE.State.lists.findIndex(c => c.id == id);
+    STORE.State.lists.splice(index, 1);
+    STORE.saveState();
+  }
+  newTask(task) {
+    STORE.State.lists.push(new List(task));
+    STORE.saveState();
+  }
 }
 
 const SERVICE = new ListsService();

@@ -1,9 +1,8 @@
 import ListsService from "../Services/ListsService.js";
-import store from "../store.js";
+import STORE from "../store.js";
 
-//TODO Don't forget to render to the screen after every data change.
 function _drawLists() {
-  let chores = store.State.lists;
+  let chores = STORE.State.lists;
   let template = "";
   chores.forEach(c => {
     template += c.Template;
@@ -14,20 +13,30 @@ _drawLists();
 
 //Public
 export default class ListsController {
-  newChore(event) {
+  newTask(event) {
     event.preventDefault();
     let formData = event.target;
-    let newChore = {
+    let task = {
       title: formData.title.value
     };
-    ListsService.newChore(newChore);
+    ListsService.newTask(task);
+    _drawLists();
   }
 
-  removeChore(id) {
-    ListsService.removeChore(id);
+  removeTask(id) {
+    ListsService.removeTask(id);
+    _drawLists();
+  }
+
+  addChore(event, id) {
+    event.preventDefault();
+    let chore = event.target.chore.value;
+    ListsService.addChore(id, chore);
+    _drawLists();
+  }
+
+  removeChore(choreId, choreIndex) {
+    ListsService.removeChore(choreId, choreIndex);
     _drawLists();
   }
 }
-//NOTE: After the store loads, we can automatically call to draw the lists.
-
-//TODO: Your app will need the ability to create, and delete both lists and listItems

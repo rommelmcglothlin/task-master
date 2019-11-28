@@ -9,7 +9,7 @@ export default class List {
 
   get Template() {
     return /*html*/ `
-    <div class="col-md-6">
+    <div class="col-md-3">
     <div class="card">
       <div class="card-body">
         <h5 class="card-title text-center m-auto">${this.title}</h5>

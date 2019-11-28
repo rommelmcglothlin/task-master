@@ -13,18 +13,18 @@
   </head>
 
   <body>
-    <header>
-      <h1 class="m-auto text-center">Stay on Track</h1>
+    <header class="row h-25">
+      <h1 class="col-8 m-auto text-center text-light">Stay on Track</h1>
     </header>
     <main class="container-fluid">
-      <div class="row">
-        <div class="col-8 m-auto text-center">
+      <div class="row h-75">
+        <div class="col-10 m-auto text-right">
           <form
             class="form-inline"
             onsubmit="app.listsController.newTask(event)"
           >
             <input
-              class="col-sm-10 form-control col-form-label-lg"
+              class="col-sm-8 form-control col-form-label-lg mb-2"
               type="text"
               name="title"
               placeholder="What do you need to do today?..."
@@ -36,8 +36,9 @@
           </form>
         </div>
       </div>
-      <div class="row" id="chores"></div>
+      <div class="row h-75 m-auto" id="chores"></div>
     </main>
     <script src="app/main.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
   </body>
 </html>

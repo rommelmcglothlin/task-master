@@ -12,32 +12,39 @@
     <title>TaskMaster</title>
   </head>
 
-  <body>
+  <body class="bg-dark">
     <header class="row h-25">
-      <h1 class="col-8 m-auto text-center text-light">Stay on Track</h1>
+      <h1 class="col-8 m-auto text-center text-light">Stay on Track!</h1>
     </header>
     <main class="container-fluid">
       <div class="row h-75">
-        <div class="col-10 m-auto text-right">
+        <div class="col-10 text-center m-auto">
           <form
-            class="form-inline"
+            class="form-inline pb-4"
             onsubmit="app.listsController.newTask(event)"
           >
             <input
-              class="col-sm-8 form-control col-form-label-lg mb-2"
+              class="col-sm-8 form-control col-form-label mb-2"
               type="text"
               name="title"
               placeholder="What do you need to do today?..."
               required
             />
-            <button type="submit" class="btn btn-primary mb-2">
-              Add Task
-            </button>
+            <span class="pl-2">
+              <button type="submit" class="btn btn-primary mb-2">
+                Add Task<span class="pl-2"><i class="fas fa-tasks"></i></span>
+              </button>
+            </span>
           </form>
         </div>
       </div>
       <div class="row h-75 m-auto" id="chores"></div>
     </main>
     <script src="app/main.js" type="module"></script>
+    <script
+      src="https://kit.fontawesome.com/9c2d120d7c.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
   </body>
 </html>

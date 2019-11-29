@@ -28,7 +28,7 @@ export default class List {
           class="form-col-label"
           placeholder="Add a Sub Task"  />
 
-          <button class="btn btn-info mb-1"type="submit"><i class="fas fa-plus"></i></button>
+          <button class="btn btn-info mb-1"type="submit"><i class="fas fa-plus pull-right"></i></button>
           </form>
         
       </div>

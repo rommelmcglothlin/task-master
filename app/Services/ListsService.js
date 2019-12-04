@@ -18,15 +18,6 @@ class ListsService {
     STORE.saveState();
   }
 
-  // removeTask(id) {
-  //   let rt = confirm("Are you Sure you want to delete this task?");
-  //   if (rt) {
-  //     let index = STORE.State.lists.findIndex(c => c.id == id);
-  //     STORE.State.lists.splice(index, 1);
-  //     STORE.saveState();
-  //   }
-  // }
-
   removeTask(id) {
     let index = STORE.State.lists.findIndex(c => c.id == id);
     STORE.State.lists.splice(index, 1);

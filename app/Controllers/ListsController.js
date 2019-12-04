@@ -28,7 +28,7 @@ export default class ListsController {
     // @ts-ignore
     Swal.fire({
       title: "Are you sure?",
-      text: "You won't be able to revert this!",
+      text: "You won't be able to recover a deleted task!",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
@@ -38,7 +38,7 @@ export default class ListsController {
       if (result.value) {
         _drawLists();
         // @ts-ignore
-        Swal.fire("Deleted!", "Your list has been deleted.", "success");
+        Swal.fire("Deleted!", "Your task has been deleted.", "success");
       } else return;
     });
   }
